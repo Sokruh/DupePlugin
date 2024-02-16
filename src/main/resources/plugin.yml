@@ -1,0 +1,32 @@
+name: DupePlugin
+version: '${project.version}'
+main: net.dupeplugin.DupePlugin
+api-version: '1.20'
+depend: [NBTAPI]
+commands:
+  dupe:
+    description: dupe
+    permission: Dupe.use
+  blacklist:
+    description: blacklist
+    permission: Dupe.blacklist
+permissions:
+  Dupe.use:
+    description: dupe
+    default: op
+  Dupe.limit:
+    default: op
+    description: dupe
+  Dupe.blacklist:
+    description: blacklist
+    default: op
+    children:
+      Dupe.blacklist.add:
+        default: op
+        description: blacklist add
+      Dupe.blacklist.remove:
+        default: op
+        description: blacklist remove
+      Dupe.blacklist.list:
+        default: op
+        description: blacklist list
